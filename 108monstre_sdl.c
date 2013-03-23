@@ -5,7 +5,7 @@
 ** Login   <benzah_m@epitech.net>
 ** 
 ** Started on  Sat Mar 16 00:05:50 2013 marc benzahra
-** Last update Tue Mar 19 19:03:48 2013 marc benzahra
+** Last update Sat Mar 23 11:41:24 2013 marc benzahra
 */
 
 #include "monstre_sdl.h"
@@ -86,16 +86,13 @@ void		monster(double a, double nmax)
       printf("%s\n", Mix_GetError());
       exit(EXIT_FAILURE);
     }
-  music = set_music("shit_gets_real.wav");
+  music = set_music("gw2.wav");
   volume = Mix_VolumeMusic(-1);
   while (go)
     {
       SDL_WaitEvent(&event);
       switch (event.type)
 	{
-	case SDL_QUIT:
-	  go = 0;
-	  break;
 	case SDL_KEYDOWN:
 	  switch (event.key.keysym.sym)
 	    {
@@ -119,13 +116,13 @@ void		monster(double a, double nmax)
 	    case SDLK_UP:
 	      {
 		Mix_FreeMusic(music);
-		music = set_music("gw2.wav");
+		music = set_music("shit_gets_real.wav");
 	      }
 	      break;
 	    case SDLK_DOWN:
 	      {
 		Mix_FreeMusic(music);
-		music = set_music("shit_gets_real.wav");
+		music = set_music("call_me_maybe.wav");
 	      }
 	      break;
 	    }

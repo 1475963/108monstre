@@ -5,7 +5,7 @@
 ** Login   <benzah_m@epitech.net>
 ** 
 ** Started on  Mon Mar 11 15:04:18 2013 marc benzahra
-** Last update Sat Mar 16 00:14:37 2013 marc benzahra
+** Last update Sat Mar 23 11:46:55 2013 marc benzahra
 */
 
 #include "monstre.h"
@@ -153,20 +153,9 @@ void		monster(double a, double nmax)
 	  res = res + cos(pow(a, n) * M_PI * x) / pow(2, n);
 	  n = n + 1;
 	}
-      if (x == -2)
-	{
-	  min = res;
-	  max = res;
-	}
-      if (res < min)
-	min = res;
-      if (res > max)
-	max = res;
-      printf("x = (%f)\ty = (%f)\n", x, res);
       my_pixel_put_to_image(500 + x * 200, 500 - res * 200, data.data, &color);
       x = x + 0.0001;
     }
-  //  printf("min = (%f)\tmax = (%f)\nround min = (%f)\tround max = (%f)\n", min, max, floor(min), ceil(max));
   mlx_put_image_to_window(ptr.mlx, ptr.win, ptr.img, 0, 0);
   draw_horizontal(&ptr, data.data, 100, 900, 900, 900);
   draw_vertical(&ptr, data.data, 100, 900, 100, 100);
